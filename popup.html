@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FocusMate</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="app-title">FocusMate</h1>
+
+    <!-- Tab Buttons -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="pomodoro">🍅 Pomodoro</button>
+        <button class="tab-button" data-tab="usage">📊 Usage</button>
+        <button class="tab-button" data-tab="blocklist">🚫 Blocklist</button>
+    </div>
+
+    <!-- Pomodoro Tab -->
+    <div class="tab-content" id="pomodoro-tab">
+        <div class="pomodoro-card">
+            <h2 class="section-title">🍅 Pomodoro Timer</h2>
+            <div class="timer-circle">
+                <span id="timer-display">25:00</span>
+            </div>
+            <div class="pomodoro-buttons">
+                <button id="start-button">Start</button>
+                <button id="reset-button">Reset</button>
+            </div>
+        </div>
+        <div class="section">
+            <h3>✔️ Today's Pomodoros</h3>
+            <div id="pomodoroCount">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Usage Tab -->
+    <div class="tab-content hidden" id="usage-tab">
+        <div class="section">
+            <h3>⏱ Time Tracker</h3>
+            <div id="usageList">Loading usage data...</div>
+            <button id="resetUsageBtn">Reset Data</button>
+        </div>
+    </div>
+
+    <!-- Blocklist Tab -->
+    <div class="tab-content hidden" id="blocklist-tab">
+        <div class="section">
+            <h3>🚫 Blocklist</h3>
+            <input type="text" id="newSiteInput" placeholder="e.g. facebook.com">
+            <button id="addSiteBtn">Add Site</button>
+            <ul id="blocklistDisplay"></ul>
+            <button id="refreshBlocklist">Apply Blocklist</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="confetti.min.js"></script>
+    <div id="quote-box" style="margin-top: 16px; font-size: 0.9em; font-style: italic; color: #555; text-align: center;">
+        Loading today's motivation...
+    </div>
+</body>
+</html>
